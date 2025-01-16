@@ -1,0 +1,21 @@
+  498  virtualenv venv
+  499  source venv/Scripts/activate
+  500  pip install -r requirements.txt
+  501  flask run
+  502  docker build -t db-lambda .
+  503  docker build -t sampleecr2 .
+  504  aws ecr create-repository --repository-name sampleecr2
+  505  docker tag sampleecr2:latest 982534355171.dkr.ecr.us-east-1.amazonaws.com/sampleecr2:latest
+  506  docker push 982534355171.dkr.ecr.us-east-1.amazonaws.com/sampleecr2:latest
+  507  npm install -g serverless
+  508  npm install serverless-wsgi serverless-python-requirements
+  509  serverless deploy
+  510  git init
+  511  git add .
+  512  git commit -m "first commit"
+  513  git branch -M main
+  514  git remote add origin https://github.com/deeptiallamsetty/sampleecr2.git
+  515  git push -u origin main
+  516  clear
+  517  history
+  518  history > details.txt

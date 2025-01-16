@@ -19,3 +19,6 @@
   516  clear
   517  history
   518  history > details.txt
+
+  create action yaml file
+  

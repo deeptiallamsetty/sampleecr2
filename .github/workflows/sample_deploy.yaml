@@ -1,4 +1,4 @@
-name: Remove  SLS Deployement
+name: SLS Deployment
 
 # on:
 #   push:

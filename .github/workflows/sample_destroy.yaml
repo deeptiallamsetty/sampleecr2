@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Destroy Deployment
 
 on:
    workflow_dispatch: 
@@ -68,12 +68,12 @@ jobs:
           SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
       run: echo "Serverless access key is " $SERVERLESS_ACCESS_KEY    
     
-    - name: deploy
+    - name: remove
       env:
         SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
       run: 
         sls remove 
 
-    - name: Post-deployment notification
+    - name: Post-destroy notification
       if: success()
       run: echo "Removed Deployment"
